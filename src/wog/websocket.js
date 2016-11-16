@@ -21,6 +21,7 @@ module.exports = function() {
 		var id = count++;
 		clients[id] = connection;
 		console.log((new Date()) + ' Connection accepted [' + id + ']');
+		console.log(('test'));
 		connection.on('close', function(reasonCode, description) {
 			connectionClosed(reasonCode, description, connection, id);
 		});
