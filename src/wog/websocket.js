@@ -37,9 +37,11 @@ module.exports = function() {
 	// Public ----------------------------------------------------------------------------------------------
 
 	_public.init = function() {
+		console.log(typeof http);
+		console.log(typeof server);
+		console.log(typeof wsServer);
 		server.listen(8080, function() {
 			console.log((new Date()) + ' Server is listening on port 8080');
-			console.log('test');
 		});
 		wsServer.on('request', recieveConnectionRequest);
 	};
