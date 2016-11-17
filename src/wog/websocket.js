@@ -21,7 +21,6 @@ module.exports = function() {
 		var id = count++;
 		clients[id] = connection;
 		console.log((new Date()) + ' Connection accepted [' + id + ']');
-		console.log(('test'));
 		connection.on('close', function(reasonCode, description) {
 			connectionClosed(reasonCode, description, connection, id);
 		});
@@ -40,6 +39,7 @@ module.exports = function() {
 	_public.init = function() {
 		server.listen(8080, function() {
 			console.log((new Date()) + ' Server is listening on port 8080');
+			console.log('test');
 		});
 		wsServer.on('request', recieveConnectionRequest);
 	};
